@@ -1,0 +1,23 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+node_modules/
+.pytest_cache/
+.coverage
+build/
+dist/
+
+# Internal logs and generated reports stay outside version control.
+output/
+work/
+*.log
+*.xlsx
+*.xlsm
+
+# Keep the committed example configuration and test fixtures.
+!config/*.toml
+!tests/fixtures/**/*.log
+!tests/fixtures/**/*.txt
+config/*.local.toml
+legacy/private/
+

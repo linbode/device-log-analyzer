@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "device-log-analyzer"
+version = "0.1.0"
+description = "Configurable vehicle operation-log analysis and reporting tool"
+requires-python = ">=3.11"
+dependencies = ["openpyxl>=3.1"]
+
+[project.scripts]
+device-log-analyzer = "device_log_analyzer.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

@@ -1,0 +1,114 @@
+[pilot]
+name = "试点局示例"
+input_glob = "{device}/操作日志/*"
+report_name = "设备日志分析报告.xlsx"
+progress_name = "统计进度.xlsx"
+report_order = [
+  "device-01",
+  "device-02",
+  "device-03",
+  "device-04",
+  "device-05",
+  "device-06",
+  "device-07",
+  "device-08",
+  "device-09",
+  "device-10",
+]
+
+[rules]
+implicit_close_seconds = 5
+cross_day_rollback_seconds = 43200
+orphan_close_max_seconds = 43200
+ghost_segment_seconds = 86400
+silence_segment_seconds = 14400
+
+[devices."device-01"]
+display_name = "设备01"
+folder = "device-01"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = true
+expected_start = "2026-10-09"
+expected_end = "2026-10-19"
+
+[devices."device-02"]
+display_name = "设备02"
+folder = "device-02"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-09"
+expected_end = "2026-10-21"
+
+[devices."device-03"]
+display_name = "设备03"
+folder = "device-03"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = true
+expected_start = "2026-10-09"
+expected_end = "2026-10-21"
+
+[devices."device-04"]
+display_name = "设备04"
+folder = "device-04"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-10"
+expected_end = "2026-10-21"
+
+[devices."device-05"]
+display_name = "设备05"
+folder = "device-05"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = true
+expected_start = "2026-10-09"
+expected_end = "2026-10-21"
+
+[devices."device-06"]
+display_name = "设备06"
+folder = "device-06"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-13"
+expected_end = "2026-10-21"
+
+[devices."device-07"]
+display_name = "设备07"
+folder = "device-07"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-09"
+expected_end = "2026-10-20"
+
+[devices."device-08"]
+display_name = "设备08"
+folder = "device-08"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-18"
+expected_end = "2026-10-21"
+
+[devices."device-09"]
+display_name = "设备09"
+folder = "device-09"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-20"
+expected_end = "2026-10-21"
+
+[devices."device-10"]
+display_name = "设备10"
+folder = "device-10"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-18"
+expected_end = "2026-10-19"
+
+[device_overrides."device-03"]
+pre_erase_duration = "133h47m42s"
+compensate_clock_rollbacks = false
+
+[device_overrides."device-07"]
+reset_active_at_day_start = true
+low_voltage_stops_recording = false
+exclude_day_end_from_current = true
+

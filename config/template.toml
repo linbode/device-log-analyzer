@@ -1,0 +1,22 @@
+[pilot]
+name = "新试点局"
+input_glob = "{device}/操作日志/*"
+report_name = "设备日志分析报告.xlsx"
+progress_name = "统计进度.xlsx"
+report_order = ["车辆01"]
+
+[rules]
+implicit_close_seconds = 5
+cross_day_rollback_seconds = 43200
+orphan_close_max_seconds = 43200
+ghost_segment_seconds = 86400
+silence_segment_seconds = 14400
+
+[devices."日志目录名"]
+display_name = "车辆01"
+folder = "日志目录名"
+channels = ["CH1", "CH2", "CH3"]
+start_recording = false
+expected_start = "2026-10-01"
+expected_end = "2026-10-31"
+
