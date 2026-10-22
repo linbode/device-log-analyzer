@@ -1,5 +1,7 @@
 # 设备日志分析工具
 
+[![CI](https://github.com/linbode/device-log-analyzer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/linbode/device-log-analyzer/actions/workflows/ci.yml)
+
 **把车载终端日志自动整理成一份可以核对的 Excel 报告。**
 
 这个工具解决的问题很直接：
@@ -505,6 +507,10 @@ OK (skipped=1)
 ```
 
 这表示 **8 项公开测试通过，1 项内部金标准回归因缺少私有数据而跳过**。跳过不等于通过，不能把它算成公开可复现的 `9/9`。
+
+GitHub Actions 会在全新的 Ubuntu 环境中依次安装 Python、安装项目依赖、
+编译代码并运行这 8 项公开测试。CI 不读取任何内部日志或旧报告，
+因此页面上的绿色检查可以由任何人打开运行记录核验。
 
 运行真实数据金标准测试：
 
